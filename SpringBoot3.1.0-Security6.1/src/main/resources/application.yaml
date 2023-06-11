@@ -1,0 +1,41 @@
+spring:
+  application:
+    name: springboot-security
+#logging:
+#  level:
+#    root: debug
+server:
+  port: 8080
+application:
+  security:
+    jwt:
+      secret-key: yQMe2N4uDOO/4lq+ACdjRcuv1IAvoM8BXAOo2OZ1soEMbnPo9bqaeNNv3uQt0D9p
+      expiration: 86400000 # a day
+      refresh-token:
+        expiration: 604800000 # 7 days
+
+---
+# 数据库
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://${host}:3306/other?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true&useSSL=false&serverTimezone=Asia/Shanghai
+    username: ${mysql_username}
+    password: ${mysql_password}
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+      # create：每次启动时都重新创建数据库表结构，这会导致现有数据的清除。
+      # create-drop：在应用程序关闭时删除数据库表结构。
+      # validate：验证实体类与数据库表结构是否一致，不一致则抛出异常。
+      # update：根据实体类更新数据库表结构。
+      # none：不自动处理。
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect # 使用的数据库方言
+        show_sql: true # 显示执行的 SQL 语句。
+        format_sql: true # 格式化 SQL 语句以便阅读
+  data:
+    redis:
+      host: ${host}
+      password: ${redis_password}
