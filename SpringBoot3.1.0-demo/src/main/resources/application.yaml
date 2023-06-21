@@ -1,0 +1,6 @@
+demo:
+  db:
+    driver: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/other?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true&useSSL=false&serverTimezone=Asia/Shanghai
+    username: root
+    password: root

@@ -19,6 +19,7 @@ public class JsonUtil {
 
     /**
      * Object转json字符串
+     *
      * @param obj
      * @return
      * @throws JsonProcessingException
@@ -31,21 +32,24 @@ public class JsonUtil {
 
 
     //////////////////字符串转其他//////////////////
+
     /**
-     *  json字符串转JSONObject
+     * json字符串转JSONObject
+     *
      * @param jsonStr
      * @return
      */
-    public static JSONObject jsonStrToJSONObject(String jsonStr){
+    public static JSONObject jsonStrToJSONObject(String jsonStr) {
         return new JSONObject(jsonStr);
     }
 
     /**
      * json字符串转Object
+     *
      * @param json
      * @param clazz
-     * @return
      * @param <T>
+     * @return
      * @throws JsonProcessingException
      */
     public static <T> T jsonStrToObj(String json, Class<T> clazz) throws JsonProcessingException {
@@ -56,12 +60,14 @@ public class JsonUtil {
 
 
     //////////////////json对象转其他//////////////////
+
     /**
      * JSONObject转Object
+     *
      * @param json
      * @param clazz
-     * @return
      * @param <T>
+     * @return
      * @throws JsonProcessingException
      */
     public static <T> T jsonObjToObj(JSONObject json, Class<T> clazz) throws JsonProcessingException {
@@ -72,10 +78,11 @@ public class JsonUtil {
 
     /**
      * JSONOArray转List
+     *
      * @param jsonArray
      * @param targetType
-     * @return
      * @param <T>
+     * @return
      * @throws JsonProcessingException
      */
     public static <T> List<T> jsonArrayToList(JSONArray jsonArray, Class<T> targetType) throws JsonProcessingException {

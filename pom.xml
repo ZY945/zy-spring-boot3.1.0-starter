@@ -10,6 +10,8 @@
     <packaging>pom</packaging>
     <modules>
         <module>SpringBoot3.1.0-Security6.1</module>
+        <module>SpringBoot3.1.0-demo-starter</module>
+        <module>SpringBoot3.1.0-demo</module>
     </modules>
 
     <properties>

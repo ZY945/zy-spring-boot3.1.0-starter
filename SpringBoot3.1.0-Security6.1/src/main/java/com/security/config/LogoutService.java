@@ -14,26 +14,26 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 public class LogoutService implements LogoutHandler {
 
-  private final TokenService tokenService;
+    private final TokenService tokenService;
 
-  @Override
-  public void logout(
-      HttpServletRequest request,
-      HttpServletResponse response,
-      Authentication authentication
-  ) {
-    final String authHeader = request.getHeader("Authorization");
-    final String jwt;
-    if (authHeader == null ||!authHeader.startsWith("Bearer ")) {
-      return;
+    @Override
+    public void logout(
+            HttpServletRequest request,
+            HttpServletResponse response,
+            Authentication authentication
+    ) {
+        final String authHeader = request.getHeader("Authorization");
+        final String jwt;
+        if (authHeader == null || !authHeader.startsWith("Bearer ")) {
+            return;
+        }
+        jwt = authHeader.substring(7);
+        // todo redis查找token是否存在
+        Token storedToken = tokenService.findByToken(jwt);
+        // todo redis删除该token即可
+        if (storedToken != null) {
+            tokenService.delByToken(jwt);
+            SecurityContextHolder.clearContext();
+        }
     }
-    jwt = authHeader.substring(7);
-    // todo redis查找token是否存在
-    Token storedToken = tokenService.findByToken(jwt);
-    // todo redis删除该token即可
-    if (storedToken != null) {
-      tokenService.delByToken(jwt);
-      SecurityContextHolder.clearContext();
-    }
-  }
 }
