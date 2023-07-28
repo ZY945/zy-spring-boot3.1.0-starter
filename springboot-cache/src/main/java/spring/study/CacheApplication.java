@@ -1,16 +1,20 @@
-package com.demo;
+package spring.study;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cache.annotation.EnableCaching;
 
 /**
  * @author 伍六七
- * @date 2023/6/19 16:39
+ * @date 2023/7/26 14:54
  */
 @SpringBootApplication
-public class DemoDBApplication {
+@EnableCaching
+public class CacheApplication {
+
+
     public static void main(String[] args) {
-        SpringApplication springApplication = new SpringApplication(DemoDBApplication.class);
-        springApplication.run(args);
+        SpringApplication.run(CacheApplication.class, args);
     }
+
 }
