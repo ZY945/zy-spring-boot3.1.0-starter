@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
  * @date 2023/7/26 14:58
  */
 @Service
-public class CacheServiceImpl implements CacheService{
+public class CacheServiceImpl implements CacheService {
     /**
      * <p>@Cacheable(value = "booksCache", key = "#name")<br/>
      * value和CacheConfig里的对应,key是#+参数,<br/>
@@ -18,7 +18,7 @@ public class CacheServiceImpl implements CacheService{
     @Cacheable(value = "booksCache", key = "#name")//开启缓存
     public CacheBook getByName(String name) {
         waitTask();
-        return new CacheBook(name,"this is book");
+        return new CacheBook(name, "this is book");
     }
 
     private void waitTask() {

@@ -1,4 +1,3 @@
-
 # 钉钉webhook
 dingding:
   accesstoken: ${dingding_access_token}

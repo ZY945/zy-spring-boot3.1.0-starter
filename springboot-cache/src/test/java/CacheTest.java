@@ -14,12 +14,13 @@ import java.util.Date;
 public class CacheTest {
     @Autowired
     private CacheService cacheService;
+
     @Test
-    void Test(){
-        System.out.println(new Date()+" "+cacheService.getByName("name1"));
-        System.out.println(new Date()+" "+cacheService.getByName("name1"));
-        System.out.println(new Date()+" "+cacheService.getByName("name3"));
-        System.out.println(new Date()+" "+cacheService.getByName("name4"));
-        System.out.println(new Date()+" "+cacheService.getByName("name5"));
+    void Test() {
+        System.out.println(new Date() + " " + cacheService.getByName("name1"));
+        System.out.println(new Date() + " " + cacheService.getByName("name1"));
+        System.out.println(new Date() + " " + cacheService.getByName("name3"));
+        System.out.println(new Date() + " " + cacheService.getByName("name4"));
+        System.out.println(new Date() + " " + cacheService.getByName("name5"));
     }
 }

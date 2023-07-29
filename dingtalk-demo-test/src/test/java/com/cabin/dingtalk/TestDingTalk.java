@@ -6,7 +6,6 @@ import jakarta.annotation.Resource;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.junit4.SpringRunner;
 
 /**
  * @author 伍六七
@@ -22,12 +21,13 @@ public class TestDingTalk {
 
     @Test
     void test() {
-        dingTalkHelper.sendMessageByText("1",null,true);
+        dingTalkHelper.sendMessageByText("1", null, true);
         System.out.println(name);
     }
 
     @Resource(name = "InfluxDBTemplate")
     private InfluxDBTemplate template;
+
     @Test
     void tes1t() {
         Long cpu0Stat = template.count("Memory");

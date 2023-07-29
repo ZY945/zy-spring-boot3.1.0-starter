@@ -13,7 +13,7 @@ import java.util.Collections;
 @Configuration
 @EnableCaching
 public class CacheConfig extends CachingConfigurerSupport {
-    
+
     @Bean
     public CacheManager cacheManager() {
         SimpleCacheManager cacheManager = new SimpleCacheManager();
